@@ -2,9 +2,9 @@ My personal portfolio website built with React, Next.js, and Chakra UI.
 
 ## TODO
 
-- Add projects and bio pages
+- Add projects and blogs
 - Add cool transitions
-- Finish About Me
+- Add some links to index page
 
 ## How to Deploy
 
