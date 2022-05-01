@@ -75,7 +75,7 @@ const Page = () => {
 				</p>
 				<Spacer mt={{ base: 6 }} />
 				<Heading size="md">
-					<FontAwesomeIcon icon={faHeart} />
+					Technology I <FontAwesomeIcon icon={faHeart} />
 				</Heading>
 				<Spacer />
 				<p></p>
@@ -91,12 +91,9 @@ const Page = () => {
 						/>
 						&ensp;{" "}
 					</p>{" "}
-					<NextLink
-						href="https://twitter.com"
-						scroll={false}
-					>
-						<Link>@pablolafontaine</Link>
-					</NextLink>
+						<Link href="https://twitter.com">
+							@pablolafontaine
+						</Link>
 				</Box>
 				<Box display="flex">
 					<p>
@@ -104,28 +101,36 @@ const Page = () => {
 							icon={faGithub}
 							fixedWidth
 						/>
-						&ensp;pablolafontaine{" "}
-					</p>
+						&ensp;{" "}
+					</p>{" "}
+						<Link href="https://twitter.com">
+							@pablolafontaine
+						</Link>
 				</Box>
+				
 				<Box display="flex">
 					<p>
-						{" "}
-						<FontAwesomeIcon
-							icon={faLinkedin}
-							fixedWidth
-						/>
-						&ensp;pablo-lafontaine
-					</p>
-				</Box>
-				<Box display="flex">
-					<p>
-						{" "}
 						<FontAwesomeIcon
 							icon={faInstagram}
 							fixedWidth
 						/>
-						&ensp;pablolafontaine1
-					</p>
+						&ensp;{" "}
+					</p>{" "}
+						<Link href="https://twitter.com">
+							@pablolafontaine1
+						</Link>
+				</Box>
+				<Box display="flex">
+					<p>
+						<FontAwesomeIcon
+							icon={faLinkedin}
+							fixedWidth
+						/>
+						&ensp;{" "}
+					</p>{" "}
+						<Link href="https://twitter.com">
+							pablo-lafontaine
+						</Link>
 				</Box>
 				<Box display="flex">
 					<p>
@@ -133,8 +138,11 @@ const Page = () => {
 							icon={faDiscord}
 							fixedWidth
 						/>
-						&ensp;kouhai#5882
-					</p>
+						&ensp;{" "}
+					</p>{" "}
+						<Link href="https://twitter.com">
+							kouhai#5882
+						</Link>
 				</Box>
 				<Spacer mt={{ base: 6 }} />
 				<Heading size="md"> Other</Heading>
