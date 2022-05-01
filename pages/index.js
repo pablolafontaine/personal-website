@@ -75,10 +75,20 @@ const Page = () => {
 				</p>
 				<Spacer mt={{ base: 6 }} />
 				<Heading size="md">
-					Technology I <FontAwesomeIcon icon={faHeart} />
+					Technology I{" "}
+					<FontAwesomeIcon icon={faHeart} />
 				</Heading>
 				<Spacer />
-				<p></p>
+				<p align="justify">
+					Languages I am most comforatable and
+					familiar with are Java, C, C#, Python,
+					and Rust; and from those, Rust is my
+					favourite language to use. I absolutely
+					adore Unix. I use Vim as my IDE of
+					choice. My blog is used to a document my
+					current interests in more depth! Thus,
+					check it out if you are interested.
+				</p>
 
 				<Spacer mt={{ base: 6 }} />
 				<Heading size="md"> On the Web</Heading>
@@ -91,9 +101,9 @@ const Page = () => {
 						/>
 						&ensp;{" "}
 					</p>{" "}
-						<Link href="https://twitter.com">
-							@pablolafontaine
-						</Link>
+					<Link href="https://twitter.com/kouhaidev_">
+						@kouhaidev_
+					</Link>
 				</Box>
 				<Box display="flex">
 					<p>
@@ -103,11 +113,11 @@ const Page = () => {
 						/>
 						&ensp;{" "}
 					</p>{" "}
-						<Link href="https://twitter.com">
-							@pablolafontaine
-						</Link>
+					<Link href="https://github.com/pablolafontaine">
+						pablolafontaine
+					</Link>
 				</Box>
-				
+
 				<Box display="flex">
 					<p>
 						<FontAwesomeIcon
@@ -116,9 +126,9 @@ const Page = () => {
 						/>
 						&ensp;{" "}
 					</p>{" "}
-						<Link href="https://twitter.com">
-							@pablolafontaine1
-						</Link>
+					<Link href="https://instagram.com/pablolafontaine1">
+						@pablolafontaine1
+					</Link>
 				</Box>
 				<Box display="flex">
 					<p>
@@ -128,9 +138,9 @@ const Page = () => {
 						/>
 						&ensp;{" "}
 					</p>{" "}
-						<Link href="https://twitter.com">
-							pablo-lafontaine
-						</Link>
+					<Link href="https://linkedin.com/in/pablo-lafontaine">
+						pablo-lafontaine
+					</Link>
 				</Box>
 				<Box display="flex">
 					<p>
@@ -138,16 +148,17 @@ const Page = () => {
 							icon={faDiscord}
 							fixedWidth
 						/>
-						&ensp;{" "}
-					</p>{" "}
-						<Link href="https://twitter.com">
-							kouhai#5882
-						</Link>
+						&ensp;kouhai#5882
+					</p>
 				</Box>
 				<Spacer mt={{ base: 6 }} />
 				<Heading size="md"> Other</Heading>
 				<Spacer />
-				<p>Outside of programming, </p>
+				<p>
+					Outside of programming, I am a gamer,
+					music producer, caffiene addict,
+					日本語を勉強している人, and anime-lover.{" "}
+				</p>
 			</Box>
 		</Container>
 	);
