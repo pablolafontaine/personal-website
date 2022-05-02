@@ -10,7 +10,7 @@ const LogoBox = styled.span`
 	align-items: center;
 	overflow: visible;
 	height: 20px;
-	line-height: 1000px;
+	line-height: 30px;
 	padding: 10px;
 	opacity: 100%;
 	img {
