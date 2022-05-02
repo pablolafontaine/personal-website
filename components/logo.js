@@ -9,13 +9,10 @@ const LogoBox = styled.span`
 	display: inline-flex;
 	align-items: center;
 	overflow: visible;
-	height: 30px;
-	line-height: 20px;
+	height: 20px;
+	line-height: 1000px;
 	padding: 10px;
 	opacity: 100%;
-	image-rendering: auto;
-	image-rendering: crisp-edges;
-	image-rendering: pixelated;
 	img {
 		height: 100%;
 		width: 100%;
