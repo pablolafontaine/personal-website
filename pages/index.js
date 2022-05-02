@@ -16,7 +16,6 @@ import {
 	faDiscord,
 } from "@fortawesome/free-brands-svg-icons";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
-import NextLink from "next/link";
 const Page = () => {
 	return (
 		<Container>
@@ -157,7 +156,8 @@ const Page = () => {
 				<p>
 					Outside of programming, I am a gamer,
 					music producer, caffiene addict,
-					日本語を勉強している人, and anime-lover.{" "}
+					日本語を勉強している人, keyboard
+					enthusiast, and anime/manga enjoyer.{" "}
 				</p>
 			</Box>
 		</Container>
