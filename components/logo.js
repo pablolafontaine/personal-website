@@ -13,7 +13,9 @@ const LogoBox = styled.span`
 	line-height: 20px;
 	padding: 10px;
 	opacity: 100%;
-
+	image-rendering: auto;
+	image-rendering: crisp-edges;
+	image-rendering: pixelated;
 	img {
 		height: 100%;
 		width: 100%;

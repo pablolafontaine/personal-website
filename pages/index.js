@@ -97,13 +97,13 @@ const Page = () => {
 					<NextLink href="/blog" scroll={false}>
 						<Link>blog</Link>
 					</NextLink>{" "}
-					is used to a document my current
-					interests in more depth! Thus, check it
-					out if you are interested.
+					is used to document my current interests
+					in more depth! Thus, check it out if you
+					are interested.
 				</p>
 
 				<Spacer mt={{ base: 8 }} />
-				<Heading size="md"> On the Web</Heading>
+				<Heading size="md"> Connect With Me </Heading>
 				<Spacer mt={{ base: 2 }} />
 				<Box display="flex">
 					<p>
@@ -179,7 +179,8 @@ const Page = () => {
 					Outside of programming, I am a gamer,
 					music producer, caffiene addict,
 					日本語を勉強している人, keyboard
-					enthusiast, and virtual reality enjoyer.{" "}
+					enthusiast, and virtual reality lover. I
+					also am a huge cat person.
 				</p>
 			</Box>
 		</Container>
