@@ -126,7 +126,7 @@ const Page = () => {
 						&ensp;{" "}
 					</p>{" "}
 					<Link href="https://github.com/pablolafontaine">
-						pablolafontaine
+						@pablolafontaine
 					</Link>
 				</Box>
 
@@ -151,7 +151,7 @@ const Page = () => {
 						&ensp;{" "}
 					</p>{" "}
 					<Link href="https://linkedin.com/in/pablo-lafontaine">
-						pablo-lafontaine
+						@pablo-lafontaine
 					</Link>
 				</Box>
 				<Box display="flex">
