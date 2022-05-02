@@ -15,7 +15,8 @@ import {
 	faLinkedin,
 	faDiscord,
 } from "@fortawesome/free-brands-svg-icons";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faHeart, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import NextLink from "next/link";
 const Page = () => {
 	return (
 		<Container>
@@ -59,8 +60,8 @@ const Page = () => {
 				mt={{ base: 2, md: 2 }}
 			>
 				<Heading size="md"> About Me </Heading>
-				<Spacer />
-				<p align="justify">
+				<Spacer mt={{ base: 2 }} />
+				<p>
 					Hi! I am currently studying computer
 					science in my second year at{" "}
 					<strong>
@@ -69,29 +70,41 @@ const Page = () => {
 					(Ryerson). I love learning,
 					experimenting, and taking on new,
 					exciting, and challenging tasks. For
-					examples of my works, check the projects
+					examples of my works, check out the{" "}
+					<NextLink
+						href="/projects"
+						scroll={false}
+					>
+						<Link>projects</Link>
+					</NextLink>{" "}
 					section of this site!
 				</p>
-				<Spacer mt={{ base: 6 }} />
+				<Spacer mt={{ base: 8 }} />
 				<Heading size="md">
 					Technology I{" "}
 					<FontAwesomeIcon icon={faHeart} />
 				</Heading>
-				<Spacer />
-				<p align="justify">
+				<Spacer mt={{ base: 2 }} />
+				<p>
 					Languages I am most comforatable and
-					familiar with are Java, C, C#, Python,
-					and Rust; and from those, Rust is my
-					favourite language to use. I absolutely
-					adore Unix. I use Vim as my IDE of
-					choice. My blog is used to a document my
-					current interests in more depth! Thus,
-					check it out if you are interested.
+					familiar with are <strong>Java</strong>,
+					<strong> C</strong>, <strong>Go</strong>
+					, <strong>Python</strong>, and{" "}
+					<strong>Rust</strong>; and from those,
+					Rust is my favourite language to use. I
+					absolutely adore Unix. I use Vim as my
+					IDE of choice. My{" "}
+					<NextLink href="/blog" scroll={false}>
+						<Link>blog</Link>
+					</NextLink>{" "}
+					is used to a document my current
+					interests in more depth! Thus, check it
+					out if you are interested.
 				</p>
 
-				<Spacer mt={{ base: 6 }} />
+				<Spacer mt={{ base: 8 }} />
 				<Heading size="md"> On the Web</Heading>
-				<Spacer />
+				<Spacer mt={{ base: 2 }} />
 				<Box display="flex">
 					<p>
 						<FontAwesomeIcon
@@ -150,14 +163,23 @@ const Page = () => {
 						&ensp;kouhai#5882
 					</p>
 				</Box>
-				<Spacer mt={{ base: 6 }} />
+				<Box display="flex">
+					<p>
+						<FontAwesomeIcon
+							icon={faEnvelope}
+							fixedWidth
+						/>
+						&ensp;pablolafontaine1@gmail.com
+					</p>
+				</Box>
+				<Spacer mt={{ base: 8 }} />
 				<Heading size="md"> Other</Heading>
-				<Spacer />
+				<Spacer mt={{ base: 2 }} />
 				<p>
 					Outside of programming, I am a gamer,
 					music producer, caffiene addict,
 					日本語を勉強している人, keyboard
-					enthusiast, and anime/manga enjoyer.{" "}
+					enthusiast, and virtual reality enjoyer.{" "}
 				</p>
 			</Box>
 		</Container>
