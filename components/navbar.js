@@ -19,13 +19,15 @@ import ThemeToggle from "./theme-toggle";
 
 const LinkItem = ({ href, path, children }) => {
 	const active = path === href;
-	const inactiveColor = useColorModeValue("gray200", "whiteAlpha.900");
+	const inactiveColor = useColorModeValue("black", "white");
+	const activeColor = useColorModeValue("#3182ce", "#faf08a");
 	return (
 		<NextLink href={href}>
 			<Link
+				borderRadius={4}
 				p={2}
-				bg={active ? "grassTeal" : undefined}
-				color={active ? "#202023" : inactiveColor}
+				bg={active ? activeColor : undefined}
+				color={active ? "#1A202C" : inactiveColor}
 			>
 				{children}
 			</Link>
