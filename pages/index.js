@@ -86,7 +86,7 @@ const Page = () => {
 				</Heading>
 				<Spacer mt={{ base: 2 }} />
 				<p>
-					Languages I am most comforatable and
+					Languages I am most comfortable and
 					familiar with are <strong>Java</strong>,
 					<strong> C</strong>, <strong>Go</strong>
 					, <strong>Python</strong>, and{" "}

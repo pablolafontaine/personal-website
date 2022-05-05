@@ -1,4 +1,67 @@
-import { Container, Heading, Box, Spacer } from "@chakra-ui/react";
+import {
+	Container,
+	Heading,
+	Box,
+	Spacer,
+	Image,
+	Link,
+	useColorModeValue,
+	Divider,
+} from "@chakra-ui/react";
+import styled from "@emotion/styled";
+const Project = ({ caption, imgPath, projectPath }) => {
+	const ProjectBox = styled.span`
+		img {
+			height: 100%;
+			width: 100%;
+			transition: filter 250ms ease, transform 250ms ease;
+		}
+		p {
+			letter-spacing: auto;
+			transition: letter-spacing 250ms ease;
+		}
+		&:hover img {
+			filter: brightness(120%);
+			transform: scale(1.04);
+		}
+		&:hover p {
+			letter-spacing: 4px;
+		}
+	`;
+	return (
+		<a href={projectPath}>
+			<Box align="center">
+				<Link
+					color={useColorModeValue(
+						"#000000",
+						"#ffffff"
+					)}
+				>
+					<ProjectBox>
+						<Image
+							mb={{ base: 4 }}
+							align="center"
+							maxWidth="600px"
+							borderStyle="solid"
+							borderWidth={2}
+							borderRadius="25px"
+							borderColor={useColorModeValue(
+								"black",
+								"white"
+							)}
+							src={imgPath}
+							alt="Project Image"
+						/>
+						<p mt={{ base: 6 }}>
+							{caption}
+						</p>
+						<Divider mb={{ base: 8 }} />
+					</ProjectBox>
+				</Link>
+			</Box>
+		</a>
+	);
+};
 const Projects = () => {
 	return (
 		<Container>
@@ -7,21 +70,13 @@ const Projects = () => {
 					Projects
 				</Heading>
 				<Spacer mt={{ base: 8 }} />
-				{/*<Box borderWidth={2} padding={2}>
-					<Image
-						align="center"
-						maxWidth="200px"
-						borderRadius="25px"
-						src="/images/projects/thumbSite.png"
-						alt=""
+				<Container align="center">
+					<Project
+						caption="Portfolio Website"
+						imgPath="/images/projects/thumbSite.png"
+						projectPath="https://github.com/pablolafontaine/personal-website"
 					/>
-
-					<Divider
-						mb={{ base: 1 }}
-						mt={{ base: 4 }}
-					/>
-					<p>Nothing here yet..</p>
-				</Box>*/}
+				</Container>
 			</Box>
 		</Container>
 	);
