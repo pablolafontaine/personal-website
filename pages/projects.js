@@ -72,6 +72,11 @@ const Projects = () => {
 				<Spacer mt={{ base: 8 }} />
 				<Container align="center">
 					<Project
+						caption="Todoli - Todo List CLI Tool"
+						imgPath="/images/projects/thumbTodoli.png"
+						projectPath="https://github.com/pablolafontaine/todoli"
+					/>
+					<Project
 						caption="Portfolio Website"
 						imgPath="/images/projects/thumbSite.png"
 						projectPath="https://github.com/pablolafontaine/personal-website"
