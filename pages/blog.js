@@ -58,15 +58,7 @@ export default function Blog({ posts }) {
           <Spacer mt={{ base: 8 }} />
           {posts.map((post) => {
             const { slug, frontmatter } = post;
-            const {
-              title,
-              date,
-              caption,
-              tags,
-              category,
-              blogImage,
-              readLength,
-            } = frontmatter;
+            const { title, date, caption, readLength } = frontmatter;
             return (
               <article key={title}>
                 <Link style={{ textDecoration: "none" }} href={`/blog/${slug}`}>

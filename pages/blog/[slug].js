@@ -19,7 +19,8 @@ import {
   faTags,
 } from "@fortawesome/free-solid-svg-icons";
 export default function Post({ frontmatter, content }) {
-  const { title, readLength, date, bannerImage, tags } = frontmatter;
+  const bgColor = useColorModeValue("rgb(240, 240, 245)", "rgb(40, 44, 52)");
+  const { title, readLength, date, tags } = frontmatter;
   const syntaxTheme = useColorModeValue(oneLight, oneDark);
   const MarkdownComponents = {
     code({ node, className, ...props }) {
@@ -41,7 +42,6 @@ export default function Post({ frontmatter, content }) {
           return {};
         }
       };
-
       return match ? (
         <SyntaxHighlighter
           style={syntaxTheme}
@@ -54,10 +54,7 @@ export default function Post({ frontmatter, content }) {
           lineProps={applyHighlights}
           customStyle={{
             fontSize: "0.8em",
-            backgroundColor: useColorModeValue(
-              "rgb(240, 240, 245)",
-              "rgb(40, 44, 52)"
-            ),
+            backgroundColor: bgColor,
           }}
           codeTagProps={{
             style: {
