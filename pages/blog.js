@@ -61,7 +61,11 @@ export default function Blog({ posts }) {
             const { title, date, caption, readLength } = frontmatter;
             return (
               <article key={title}>
-                <Link style={{ textDecoration: "none" }} href={`/blog/${slug}`}>
+                <Link
+                  key={title}
+                  style={{ textDecoration: "none" }}
+                  href={`/blog/${slug}`}
+                >
                   <BlogPost
                     headline={title}
                     readLength={readLength}
