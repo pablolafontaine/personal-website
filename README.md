@@ -4,7 +4,7 @@ My personal portfolio website built with React, Next.js, and Chakra UI.
 
 ## TODO
 
-- Add blog
+- Write blog posts
 
 ## Live
 https://pablolafontaine.com
