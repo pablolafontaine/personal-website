@@ -9,6 +9,7 @@ import {
   Divider,
 } from "@chakra-ui/react";
 import styled from "@emotion/styled";
+import Head from "next/head";
 const Project = ({ caption, imgPath, projectPath }) => {
   const ProjectBox = styled.span`
     img {
@@ -54,26 +55,46 @@ const Project = ({ caption, imgPath, projectPath }) => {
 };
 const Projects = () => {
   return (
-    <Container>
-      <Box display={"inline-block"} mt={{ base: 4 }}>
-        <Heading as="h1" fontSize="20px">
-          Projects
-        </Heading>
-        <Spacer mt={{ base: 8 }} />
-        <Container align="center">
-          <Project
-            caption="Todoli - Todo List CLI Tool"
-            imgPath="/images/projects/thumbTodoli.png"
-            projectPath="https://github.com/pablolafontaine/todoli"
-          />
-          <Project
-            caption="Portfolio Website"
-            imgPath="/images/projects/thumbSite.png"
-            projectPath="https://github.com/pablolafontaine/personal-website"
-          />
-        </Container>
-      </Box>
-    </Container>
+    <>
+      <Head>
+        <title> Projects </title>
+        <meta content="Pablo Lafontaine - Projects" property="og:title" />
+        <meta
+          content="List of projects I've worked on. Check them out on GitHub!"
+          property="og:description"
+        />
+        <meta name="keywords" content="Projects, Git, Pablo" />
+        <meta
+          content="https://pablolafontaine.com/projects"
+          property="og:url"
+        />
+        <meta
+          content="https://pablolafontaine.com/images/pfp.png"
+          property="og:image"
+        />
+        <meta content="#FFFFFF" data-react-helmet="true" name="theme-color" />
+      </Head>
+      <Container>
+        <Box display={"inline-block"} mt={{ base: 4 }}>
+          <Heading as="h1" fontSize="20px">
+            Projects
+          </Heading>
+          <Spacer mt={{ base: 8 }} />
+          <Container align="center">
+            <Project
+              caption="Todoli - Todo List CLI Tool"
+              imgPath="/images/projects/thumbTodoli.png"
+              projectPath="https://github.com/pablolafontaine/todoli"
+            />
+            <Project
+              caption="Portfolio Website"
+              imgPath="/images/projects/thumbSite.png"
+              projectPath="https://github.com/pablolafontaine/personal-website"
+            />
+          </Container>
+        </Box>
+      </Container>
+    </>
   );
 };
 

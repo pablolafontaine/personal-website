@@ -18,9 +18,10 @@ import {
   faCalendar,
   faTags,
 } from "@fortawesome/free-solid-svg-icons";
-export default function Post({ frontmatter, content }) {
+import Head from "next/head";
+export default function Post({ frontmatter, content, slug, readLength }) {
   const bgColor = useColorModeValue("rgb(240, 240, 245)", "rgb(40, 44, 52)");
-  const { title, readLength, date, tags } = frontmatter;
+  const { title, caption, date, tags } = frontmatter;
   const syntaxTheme = useColorModeValue(oneLight, oneDark);
   const MarkdownComponents = {
     code({ node, className, ...props }) {
@@ -126,25 +127,42 @@ ul {
     ,
   `;
   return (
-    <main>
-      <Container>
-        <Heading>{title}</Heading>
-        <p>
-          <FontAwesomeIcon icon={faCalendar} /> {date}
-          {" • "}
-          <FontAwesomeIcon icon={faStopwatch} /> {readLength} minute read
-        </p>
-        <p>
-          <FontAwesomeIcon icon={faTags} /> {tags}
-        </p>
-        <Divider mb={{ base: 2 }} />
-        <MarkdownStyle>
-          <ReactMarkdown components={MarkdownComponents}>
-            {content}
-          </ReactMarkdown>
-        </MarkdownStyle>
-      </Container>
-    </main>
+    <>
+      <Head>
+        <title> {title} </title>
+        <meta content={title} property="og:title" />
+        <meta content={caption} property="og:description" />
+        <meta name="keywords" content={tags} />
+        <meta
+          content={`https://pablolafontaine.com/blog/${slug}`}
+          property="og:url"
+        />
+        <meta
+          content={`https://www.pablolafontaine.com/images/${slug}.png`}
+          property="og:image"
+        />
+        <meta content="#FFFFFF" data-react-helmet="true" name="theme-color" />
+      </Head>
+      <main>
+        <Container>
+          <Heading>{title}</Heading>
+          <p>
+            <FontAwesomeIcon icon={faCalendar} /> {date}
+            {" • "}
+            <FontAwesomeIcon icon={faStopwatch} /> {readLength} minute read
+          </p>
+          <p>
+            <FontAwesomeIcon icon={faTags} /> {tags}
+          </p>
+          <Divider mb={{ base: 2 }} mt={{ base: 2 }} />
+          <MarkdownStyle>
+            <ReactMarkdown components={MarkdownComponents}>
+              {content}
+            </ReactMarkdown>
+          </MarkdownStyle>
+        </Container>
+      </main>
+    </>
   );
 }
 
@@ -164,10 +182,17 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params: { slug } }) {
   const fileName = fs.readFileSync(`pages/posts/${slug}.md`, "utf-8");
   const { data: frontmatter, content } = matter(fileName);
+  let readLength = (content.split(" ").length / 255).toFixed(0);
+  if (readLength < 1) {
+    readLength = 1;
+  }
+
   return {
     props: {
+      slug,
       frontmatter,
       content,
+      readLength,
     },
   };
 }

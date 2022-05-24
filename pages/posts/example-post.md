@@ -1,8 +1,6 @@
 ---
 title: "Example Blogpost"
 caption: "Example Caption"
-readLength: "2"
-category: "Tools"
 date: "May 7, 2022"
 tags: "example, example2, example3"
 ---

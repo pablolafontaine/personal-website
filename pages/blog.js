@@ -12,6 +12,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStopwatch, faCalendar } from "@fortawesome/free-solid-svg-icons";
 import matter from "gray-matter";
 import fs from "fs";
+import Head from "next/head";
 const BlogBox = styled.span`
   #headline {
     text-decoration: none;
@@ -49,36 +50,53 @@ const BlogPost = ({ headline, readLength, caption, date }) => {
 };
 export default function Blog({ posts }) {
   return (
-    <main>
-      <Container>
-        <Box mt={{ base: 4 }}>
-          <Heading as="h1" fontSize="20px">
-            Blog
-          </Heading>
-          <Spacer mt={{ base: 8 }} />
-          {posts.map((post) => {
-            const { slug, frontmatter } = post;
-            const { title, date, caption, readLength } = frontmatter;
-            return (
-              <article key={title}>
-                <Link
-                  key={title}
-                  style={{ textDecoration: "none" }}
-                  href={`/blog/${slug}`}
-                >
-                  <BlogPost
-                    headline={title}
-                    readLength={readLength}
-                    date={date}
-                    caption={caption}
-                  />
-                </Link>
-              </article>
-            );
-          })}
-        </Box>
-      </Container>
-    </main>
+    <>
+      <Head>
+        <title> Blog </title>
+        <meta content="Pablo Lafontaine - Blog" property="og:title" />
+        <meta
+          content="My blog where I talk about things in tech."
+          property="og:description"
+        />
+        <meta name="keywords" content="Blog, Markdown, Pablo" />
+        <meta content="https://pablolafontaine.com/blog" property="og:url" />
+        <meta
+          content="https://pablolafontaine.com/images/pfp.png"
+          property="og:image"
+        />
+        <meta content="#FFFFFF" data-react-helmet="true" name="theme-color" />
+      </Head>
+      <main>
+        <Container>
+          <Box mt={{ base: 4 }}>
+            <Heading as="h1" fontSize="20px">
+              Blog
+            </Heading>
+            <Spacer mt={{ base: 8 }} />
+            {posts.map((post) => {
+              const { slug, frontmatter, readLength } = post;
+              const { title, date, caption } = frontmatter;
+              return (
+                <article key={title}>
+                  <Link
+                    key={title}
+                    style={{ textDecoration: "none" }}
+                    href={`/blog/${slug}`}
+                  >
+                    <BlogPost
+                      headline={title}
+                      readLength={readLength}
+                      date={date}
+                      caption={caption}
+                    />
+                  </Link>
+                </article>
+              );
+            })}
+          </Box>
+        </Container>
+      </main>
+    </>
   );
 }
 
@@ -88,11 +106,15 @@ export async function getStaticProps() {
   const posts = files.map((fileName) => {
     const slug = fileName.replace(".md", "");
     const readFile = fs.readFileSync(`pages/posts/${fileName}`);
-    const { data: frontmatter } = matter(readFile);
-
+    const { data: frontmatter, content } = matter(readFile);
+    let readLength = (content.split(" ").length / 250).toFixed(0);
+    if (readLength < 1) {
+      readLength = 1;
+    }
     return {
       slug,
       frontmatter,
+      readLength,
     };
   });
   return {
