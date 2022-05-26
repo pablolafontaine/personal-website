@@ -111,7 +111,7 @@ export async function getStaticProps() {
     const readFile = fs.readFileSync(`pages/posts/${fileName}`);
     const { data: frontmatter, content } = matter(readFile);
     const caption = content.substr(0, 200).replace(/\*/g, "").concat("...");
-    let readLength = (content.split(" ").length / 250).toFixed(0);
+    let readLength = (content.split(" ").length / 125).toFixed(0);
     if (readLength < 1) {
       readLength = 1;
     }
