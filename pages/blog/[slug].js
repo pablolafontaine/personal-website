@@ -3,6 +3,7 @@ import matter from "gray-matter";
 import styled from "@emotion/styled";
 import {
   Divider,
+  Image,
   Heading,
   useColorModeValue,
   Container,
@@ -16,6 +17,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faStopwatch,
   faCalendar,
+  faPencil,
   faTags,
 } from "@fortawesome/free-solid-svg-icons";
 import Head from "next/head";
@@ -171,16 +173,33 @@ a:active { text-decoration: none; }
       </Head>
       <main>
         <Container maxW="container.xl">
-          <Heading>{title}</Heading>
-          <p mt={{ base: 2 }}>
-            <FontAwesomeIcon icon={faCalendar} /> {date}
-            {" • "}
-            <FontAwesomeIcon icon={faStopwatch} /> {readLength} minute read
-          </p>
-          <p mb={{ base: 2 }}>
-            <FontAwesomeIcon icon={faTags} /> {tags}
-          </p>
-          <Divider mb={{ base: 2 }} mt={{ base: 2 }} />
+          <Heading mb={{ base: 4 }}>{title}</Heading>
+          <Image
+            borderColor={useColorModeValue("black", "white")}
+            borderWidth={2}
+            borderStyle="solid"
+            maxWidth="75px"
+            display="inline-block"
+            float="left"
+            mr={{ base: 4 }}
+            borderRadius="full"
+            src="/images/pfp.png"
+            alt="Profile Image"
+          />
+          <div>
+            <p>
+              <FontAwesomeIcon icon={faPencil} /> Pablo Lafontaine
+            </p>
+            <p mt={{ base: 2 }}>
+              <FontAwesomeIcon icon={faCalendar} /> {date}
+              {" • "}
+              <FontAwesomeIcon icon={faStopwatch} /> {readLength} minute read
+            </p>
+            <p mb={{ base: 2 }}>
+              <FontAwesomeIcon icon={faTags} /> {tags}
+            </p>
+          </div>
+          <Divider mb={{ base: 2 }} mt={{ base: 4 }} />
           <MarkdownStyle>
             <ReactMarkdown components={MarkdownComponents}>
               {content}
