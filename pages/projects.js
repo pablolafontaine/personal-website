@@ -66,7 +66,6 @@ const Projects = () => {
           content="https://pablolafontaine.com/images/pfp.png"
           property="og:image"
         />
-        <meta content="#FFFFFF" data-react-helmet="true" name="theme-color" />
       </Head>
       <motion.div
         initial={{ opacity: 0 }}

@@ -169,7 +169,6 @@ a:active { text-decoration: none; }
           content={`https://www.pablolafontaine.com/images/${slug}.png`}
           property="og:image"
         />
-        <meta content="#FFFFFF" data-react-helmet="true" name="theme-color" />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <main>
