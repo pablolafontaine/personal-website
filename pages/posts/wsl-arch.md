@@ -4,7 +4,7 @@ date: "May 25, 2022"
 tags: "WSL, Linux, Productivity"
 ---
 
-**Windows Subsystem for Linux 2** (WSL 2) allows you to install a Linux Distribution and run Linux binaries natively on Windows; all through the command line. A full Linux kernal in a managed VM without the need for large overhead from a full VM, nor the annoyance of having to dual-boot? Sounds too good to be true! Thankfully, it isn't. Furthermore, it's rather easy to set up. 🙂
+**Windows Subsystem for Linux 2** (WSL 2) allows you to install a Linux Distribution and run Linux binaries natively on Windows; all through the command line. A full Linux kernel in a managed VM without the need for large overhead from a full VM, nor the annoyance of having to dual-boot? Sounds too good to be true! Thankfully, it isn't. Furthermore, it's rather easy to set up. 🙂
 
 &nbsp;
 
@@ -47,7 +47,7 @@ dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux 
 
 and **restart** your machine.
 
-Second, we have to install the [Linux kernal update package](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi). Once done, return to PowerShell and enter the command:
+Second, we have to install the [Linux kernel update package](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi). Once done, return to PowerShell and enter the command:
 
 `wsl --set-default-version 2`
 
@@ -85,7 +85,7 @@ Now, optionally you can install zsh—an improved bash with more features—inst
 
 &nbsp;
 
-Last, we have to **create a user**. To do this, we need to setup the sudoers file. Enter:
+Last, we have to **create a user**. To do this, we need to set up the sudoers file. Enter:
 
 ```bash
 echo "%wheel ALL=(ALL) ALL" > /etc/sudoers.d/wheel
@@ -101,12 +101,12 @@ Now, we can set a password for the user:
 And, finally, we can set that user as the default user.
 
 1. Enter `exit`.
-2. We have to `cd <path>` where <path> is where your `Arch.exe` located. For example, mine is in `C:\Arch` and thus I type `cd C:\Arch`
+2. We have to `cd <path>` where <path> is where your `Arch.exe` is located. For example, mine is in `C:\Arch` and thus I type `cd C:\Arch`
 3. Enter `Arch.exe config --default-user <username>`
 
 ## Conclusion
 
-Congratulations! You now have a fully working and setup Arch Linux install integrated with Windows. To open it, just simply type: `wsl` in your PowerShell. If Arch is not your only distro, you may need to set it as default for `wsl` to work. This can be done with `wsl --setdefault arch`.
+Congratulations! You now have a fully working and set up Arch Linux install integrated with Windows. To open it, just simply type: `wsl` in your PowerShell. If Arch is not your only distro, you may need to set it as default for `wsl` to work. This can be done with `wsl --setdefault arch`.
 
 Enjoy! 😊
 

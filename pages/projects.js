@@ -9,6 +9,7 @@ import {
   SimpleGrid,
 } from "@chakra-ui/react";
 import styled from "@emotion/styled";
+import { motion } from "framer-motion";
 import Head from "next/head";
 const Project = ({ caption, imgPath, projectPath }) => {
   const ProjectBox = styled.span`
@@ -67,26 +68,32 @@ const Projects = () => {
         />
         <meta content="#FFFFFF" data-react-helmet="true" name="theme-color" />
       </Head>
-      <Container>
-        <Box mt={{ base: 4 }}>
-          <Heading as="h1" fontSize="20px">
-            Projects
-          </Heading>
-          <Spacer mt={{ base: 8 }} />
-          <SimpleGrid columns={[1, 1, 2]} gap={6}>
-            <Project
-              caption="todoli"
-              imgPath="/images/projects/thumbTodoli.png"
-              projectPath="https://github.com/pablolafontaine/todoli"
-            />
-            <Project
-              caption="Portfolio Website"
-              imgPath="/images/projects/thumbSite.png"
-              projectPath="https://github.com/pablolafontaine/personal-website"
-            />
-          </SimpleGrid>
-        </Box>
-      </Container>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+      >
+        <Container>
+          <Box mt={{ base: 4 }}>
+            <Heading as="h1" fontSize="20px">
+              Projects
+            </Heading>
+            <Spacer mt={{ base: 8 }} />
+            <SimpleGrid columns={[1, 1, 2]} gap={6}>
+              <Project
+                caption="todoli"
+                imgPath="/images/projects/thumbTodoli.png"
+                projectPath="https://github.com/pablolafontaine/todoli"
+              />
+              <Project
+                caption="Portfolio Website"
+                imgPath="/images/projects/thumbSite.png"
+                projectPath="https://github.com/pablolafontaine/personal-website"
+              />
+            </SimpleGrid>
+          </Box>
+        </Container>
+      </motion.div>
     </>
   );
 };

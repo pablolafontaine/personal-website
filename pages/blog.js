@@ -8,6 +8,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import styled from "@emotion/styled";
+import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStopwatch, faCalendar } from "@fortawesome/free-solid-svg-icons";
 import matter from "gray-matter";
@@ -71,32 +72,38 @@ export default function Blog({ posts }) {
       </Head>
       <main>
         <Container>
-          <Box mt={{ base: 4 }}>
-            <Heading as="h1" fontSize="20px">
-              Blog
-            </Heading>
-            <Spacer mt={{ base: 8 }} />
-            {posts.map((post) => {
-              const { slug, frontmatter, readLength, caption } = post;
-              const { title, date } = frontmatter;
-              return (
-                <article key={title}>
-                  <Link
-                    key={title}
-                    style={{ textDecoration: "none" }}
-                    href={`/blog/${slug}`}
-                  >
-                    <BlogPost
-                      headline={title}
-                      readLength={readLength}
-                      date={date}
-                      caption={caption}
-                    />
-                  </Link>
-                </article>
-              );
-            })}
-          </Box>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <Box mt={{ base: 4 }}>
+              <Heading as="h1" fontSize="20px">
+                Blog
+              </Heading>
+              <Spacer mt={{ base: 8 }} />
+              {posts.map((post) => {
+                const { slug, frontmatter, readLength, caption } = post;
+                const { title, date } = frontmatter;
+                return (
+                  <article key={title}>
+                    <Link
+                      key={title}
+                      style={{ textDecoration: "none" }}
+                      href={`/blog/${slug}`}
+                    >
+                      <BlogPost
+                        headline={title}
+                        readLength={readLength}
+                        date={date}
+                        caption={caption}
+                      />
+                    </Link>
+                  </article>
+                );
+              })}
+            </Box>
+          </motion.div>
         </Container>
       </main>
     </>

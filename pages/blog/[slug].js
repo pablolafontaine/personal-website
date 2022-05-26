@@ -1,5 +1,6 @@
 import fs from "fs";
 import matter from "gray-matter";
+import { motion } from "framer-motion";
 import styled from "@emotion/styled";
 import {
   Divider,
@@ -173,38 +174,44 @@ a:active { text-decoration: none; }
       </Head>
       <main>
         <Container maxW="container.xl">
-          <Heading mb={{ base: 4 }}>{title}</Heading>
-          <Image
-            borderColor={useColorModeValue("black", "white")}
-            borderWidth={2}
-            borderStyle="solid"
-            maxWidth="75px"
-            display="inline-block"
-            float="left"
-            mr={{ base: 4 }}
-            borderRadius="full"
-            src="/images/pfp.png"
-            alt="Profile Image"
-          />
-          <div>
-            <p>
-              <FontAwesomeIcon icon={faPencil} /> Pablo Lafontaine
-            </p>
-            <p mt={{ base: 2 }}>
-              <FontAwesomeIcon icon={faCalendar} /> {date}
-              {" • "}
-              <FontAwesomeIcon icon={faStopwatch} /> {readLength} minute read
-            </p>
-            <p mb={{ base: 2 }}>
-              <FontAwesomeIcon icon={faTags} /> {tags}
-            </p>
-          </div>
-          <Divider mb={{ base: 2 }} mt={{ base: 4 }} />
-          <MarkdownStyle>
-            <ReactMarkdown components={MarkdownComponents}>
-              {content}
-            </ReactMarkdown>
-          </MarkdownStyle>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <Heading mb={{ base: 4 }}>{title}</Heading>
+            <Image
+              borderColor={useColorModeValue("black", "white")}
+              borderWidth={2}
+              borderStyle="solid"
+              maxWidth="75px"
+              display="inline-block"
+              float="left"
+              mr={{ base: 4 }}
+              borderRadius="full"
+              src="/images/pfp.png"
+              alt="Profile Image"
+            />
+            <div>
+              <p>
+                <FontAwesomeIcon icon={faPencil} /> Pablo Lafontaine
+              </p>
+              <p mt={{ base: 2 }}>
+                <FontAwesomeIcon icon={faCalendar} /> {date}
+                {" • "}
+                <FontAwesomeIcon icon={faStopwatch} /> {readLength} minute read
+              </p>
+              <p mb={{ base: 2 }}>
+                <FontAwesomeIcon icon={faTags} /> {tags}
+              </p>
+            </div>
+            <Divider mb={{ base: 2 }} mt={{ base: 4 }} />
+            <MarkdownStyle>
+              <ReactMarkdown components={MarkdownComponents}>
+                {content}
+              </ReactMarkdown>
+            </MarkdownStyle>
+          </motion.div>
         </Container>
       </main>
     </>
