@@ -59,6 +59,7 @@ export default function Post({ frontmatter, content, slug, readLength }) {
           }}
           codeTagProps={{
             style: {
+              padding: "0em",
               fontSize: "inherit",
               backgroundColor: "inherit",
             },
@@ -71,6 +72,8 @@ export default function Post({ frontmatter, content, slug, readLength }) {
     },
   };
   const MarkdownStyle = styled.div`
+    	line-height: 1.7em;
+	font-size: 1.2em;
 blockquote{
     	padding: 0.5em;
 	margin-left: 10px;
@@ -83,22 +86,45 @@ blockquote{
 	background-color: ${useColorModeValue("rgb(240, 240, 245)", "rgb(40, 44, 52)")};
 
 },
+ol {
+	padding-left: 1em;
+	li::marker{
+	font-size: 0.8em;
+	color: ${useColorModeValue("rgba(0, 0, 0, 0.5)", "rgba(255, 255, 255, 0.5)")};
+		content: counter(list-item) "  ";
+	},
+},
+ul {
+	padding-left: 2.5em;
+}
+    ,
+img{
+	margin-bottom: 1em;
+},
     h1 {
+	margin-top: 1em;
       font-weight: bold;
-      font-size: 1.6em;
+      font-size: 2.0em;
+    	line-height: 2.0em;
     }
     ,
     h2 {
+	margin-top: 1em;
       font-weight: bold;
-      font-size: 1.4em;
+      font-size: 1.8em;
+	line-height: 2.0em;
     }
     ,
     h3 {
+	margin-top: 1em;
       font-weight: bold;
-      font-size: 1.2em;
+      font-size: 1.4em;
+    	line-height: 2.0em;
     }
     h4 {
-      font-size: 1em;
+    font-weight: bold;
+      font-size: 1.2em;
+    	line-height: 2.0em;
     }
     code {
     	padding: 0.25em;
@@ -118,13 +144,6 @@ a:hover { text-decoration: underline; },
 
 a:active { text-decoration: none; }
 },
-ol {
-	padding-left: 2em;
-},
-ul {
-	padding-left: 2em;
-}
-    ,
   `;
   return (
     <>
@@ -144,14 +163,14 @@ ul {
         <meta content="#FFFFFF" data-react-helmet="true" name="theme-color" />
       </Head>
       <main>
-        <Container>
+        <Container maxW="container.xl">
           <Heading>{title}</Heading>
-          <p>
+          <p mt={{ base: 2 }}>
             <FontAwesomeIcon icon={faCalendar} /> {date}
             {" • "}
             <FontAwesomeIcon icon={faStopwatch} /> {readLength} minute read
           </p>
-          <p>
+          <p mb={{ base: 2 }}>
             <FontAwesomeIcon icon={faTags} /> {tags}
           </p>
           <Divider mb={{ base: 2 }} mt={{ base: 2 }} />

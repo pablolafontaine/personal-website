@@ -6,7 +6,7 @@ import {
   Image,
   Link,
   useColorModeValue,
-  Divider,
+  SimpleGrid,
 } from "@chakra-ui/react";
 import styled from "@emotion/styled";
 import Head from "next/head";
@@ -17,21 +17,14 @@ const Project = ({ caption, imgPath, projectPath }) => {
       width: 100%;
       transition: filter 250ms ease, transform 250ms ease;
     }
-    p {
-      letter-spacing: auto;
-      transition: letter-spacing 250ms ease;
-    }
     &:hover img {
       filter: brightness(120%);
       transform: scale(1.04);
     }
-    &:hover p {
-      letter-spacing: 4px;
-    }
   `;
   return (
     <a href={projectPath}>
-      <Box align="center">
+      <Box align="center" w="100%">
         <Link color={useColorModeValue("#000000", "#ffffff")}>
           <ProjectBox>
             <Image
@@ -46,13 +39,13 @@ const Project = ({ caption, imgPath, projectPath }) => {
               alt="Project Image"
             />
             <p mt={{ base: 6 }}>{caption}</p>
-            <Divider mb={{ base: 8 }} />
           </ProjectBox>
         </Link>
       </Box>
     </a>
   );
 };
+
 const Projects = () => {
   return (
     <>
@@ -75,14 +68,14 @@ const Projects = () => {
         <meta content="#FFFFFF" data-react-helmet="true" name="theme-color" />
       </Head>
       <Container>
-        <Box display={"inline-block"} mt={{ base: 4 }}>
+        <Box mt={{ base: 4 }}>
           <Heading as="h1" fontSize="20px">
             Projects
           </Heading>
           <Spacer mt={{ base: 8 }} />
-          <Container align="center">
+          <SimpleGrid columns={[1, 1, 2]} gap={6}>
             <Project
-              caption="Todoli - Todo List CLI Tool"
+              caption="todoli"
               imgPath="/images/projects/thumbTodoli.png"
               projectPath="https://github.com/pablolafontaine/todoli"
             />
@@ -91,7 +84,7 @@ const Projects = () => {
               imgPath="/images/projects/thumbSite.png"
               projectPath="https://github.com/pablolafontaine/personal-website"
             />
-          </Container>
+          </SimpleGrid>
         </Box>
       </Container>
     </>

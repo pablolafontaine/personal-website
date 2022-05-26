@@ -16,10 +16,11 @@ import Head from "next/head";
 const BlogBox = styled.span`
   #headline {
     text-decoration: none;
+    transition: opacity 250ms ease;
+    opacity: 0.7;
   }
   &:hover #headline {
-    text-decoration: underline;
-    text-decorationthickness: 1px;
+    opacity: 1;
   }
 `;
 const BlogPost = ({ headline, readLength, caption, date }) => {
@@ -27,9 +28,11 @@ const BlogPost = ({ headline, readLength, caption, date }) => {
     <BlogBox>
       <Box align="left">
         <Box>
-          <Heading id="headline">{headline}</Heading>
+          <Heading size="lg" id="headline">
+            {headline}
+          </Heading>
         </Box>
-        <Box opacity="80%">
+        <Box opacity="80%" mb={{ base: 1 }} mt={{ base: 1 }}>
           <p>
             <FontAwesomeIcon icon={faCalendar} /> {date}
             {" • "}
@@ -41,7 +44,7 @@ const BlogPost = ({ headline, readLength, caption, date }) => {
           flexShrink={0}
           mt={{ base: 4, md: 0 }}
         >
-          <p mt={{ base: 4 }}>{caption}</p>
+          <p mt={{ base: 6 }}>{caption}</p>
         </Box>
         <Divider mb={{ base: 6 }} />
       </Box>
@@ -74,8 +77,8 @@ export default function Blog({ posts }) {
             </Heading>
             <Spacer mt={{ base: 8 }} />
             {posts.map((post) => {
-              const { slug, frontmatter, readLength } = post;
-              const { title, date, caption } = frontmatter;
+              const { slug, frontmatter, readLength, caption } = post;
+              const { title, date } = frontmatter;
               return (
                 <article key={title}>
                   <Link
@@ -107,6 +110,12 @@ export async function getStaticProps() {
     const slug = fileName.replace(".md", "");
     const readFile = fs.readFileSync(`pages/posts/${fileName}`);
     const { data: frontmatter, content } = matter(readFile);
+    const caption = content
+      .split(" ")
+      .slice(0, 20)
+      .join(" ")
+      .replace(/\*/g, "")
+      .concat("...");
     let readLength = (content.split(" ").length / 250).toFixed(0);
     if (readLength < 1) {
       readLength = 1;
@@ -115,6 +124,7 @@ export async function getStaticProps() {
       slug,
       frontmatter,
       readLength,
+      caption,
     };
   });
   return {
