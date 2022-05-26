@@ -19,9 +19,15 @@ import {
   faTags,
 } from "@fortawesome/free-solid-svg-icons";
 import Head from "next/head";
-export default function Post({ frontmatter, content, slug, readLength }) {
+export default function Post({
+  frontmatter,
+  content,
+  caption,
+  slug,
+  readLength,
+}) {
   const bgColor = useColorModeValue("rgb(240, 240, 245)", "rgb(40, 44, 52)");
-  const { title, caption, date, tags } = frontmatter;
+  const { title, date, tags } = frontmatter;
   const syntaxTheme = useColorModeValue(oneLight, oneDark);
   const MarkdownComponents = {
     code({ node, className, ...props }) {
@@ -161,6 +167,7 @@ a:active { text-decoration: none; }
           property="og:image"
         />
         <meta content="#FFFFFF" data-react-helmet="true" name="theme-color" />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <main>
         <Container maxW="container.xl">
@@ -201,7 +208,10 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params: { slug } }) {
   const fileName = fs.readFileSync(`pages/posts/${slug}.md`, "utf-8");
   const { data: frontmatter, content } = matter(fileName);
-  let readLength = (content.split(" ").length / 255).toFixed(0);
+  const caption = content
+    .substr(0, content.indexOf("&nbsp;"))
+    .replace(/\*/g, "");
+  let readLength = (content.split(" ").length / 125).toFixed(0);
   if (readLength < 1) {
     readLength = 1;
   }
@@ -211,6 +221,7 @@ export async function getStaticProps({ params: { slug } }) {
       slug,
       frontmatter,
       content,
+      caption,
       readLength,
     },
   };

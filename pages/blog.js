@@ -110,12 +110,7 @@ export async function getStaticProps() {
     const slug = fileName.replace(".md", "");
     const readFile = fs.readFileSync(`pages/posts/${fileName}`);
     const { data: frontmatter, content } = matter(readFile);
-    const caption = content
-      .split(" ")
-      .slice(0, 20)
-      .join(" ")
-      .replace(/\*/g, "")
-      .concat("...");
+    const caption = content.substr(0, 200).replace(/\*/g, "").concat("...");
     let readLength = (content.split(" ").length / 250).toFixed(0);
     if (readLength < 1) {
       readLength = 1;
