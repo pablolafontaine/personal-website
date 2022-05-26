@@ -41,9 +41,7 @@ First, we are going to enable the WSL feature for Windows.
 
 Next, enter the command:
 
-```
-dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
-```
+`dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart`
 
 and **restart** your machine.
 
