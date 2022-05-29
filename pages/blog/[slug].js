@@ -1,5 +1,6 @@
 import fs from "fs";
 import matter from "gray-matter";
+import Giscus from "@giscus/react";
 import { motion } from "framer-motion";
 import styled from "@emotion/styled";
 import {
@@ -211,6 +212,20 @@ a:active { text-decoration: none; }
               </ReactMarkdown>
             </MarkdownStyle>
           </motion.div>
+          <Giscus
+            id="comments"
+            repo="pablolafontaine/personal-website"
+            repoId="R_kgDOHQ34Yg"
+            category="General"
+            categoryId="DIC_kwDOHQ34Ys4CPWY-"
+            mapping="og:title"
+            reactionsEnabled="1"
+            emitMetadata="0"
+            inputPosition="bottom"
+            theme={useColorModeValue("light", "dark")}
+            lang="en"
+            loading="lazy"
+          ></Giscus>
         </Container>
       </main>
     </>

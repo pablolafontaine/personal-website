@@ -85,10 +85,12 @@ Now, optionally you can install zsh—an improved bash with more features—inst
 
 Last, we have to **create a user**. To do this, we need to set up the sudoers file. Enter:
 
-```bash
-echo "%wheel ALL=(ALL) ALL" > /etc/sudoers.d/wheel
-useradd -m -G wheel -s /bin/zsh <username>
-```
+`echo "%wheel ALL=(ALL) ALL" > /etc/sudoers.d/wheel`
+
+and
+
+`useradd -m -G wheel -s /bin/zsh <username>`
+
 *Replace /bin/zsh with /bin/bash if not using zsh!*
 
 *Replace <username> with your desired username!*
