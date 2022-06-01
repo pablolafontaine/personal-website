@@ -10,7 +10,6 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import {
-  faInstagram,
   faGithub,
   faTwitter,
   faLinkedin,
@@ -89,10 +88,11 @@ const Page = () => {
             <Spacer mt={{ base: 2 }} />
             <p>
               Languages I am most comfortable and familiar with are{" "}
-              <strong>Java</strong>,<strong> C</strong>, <strong>Go</strong>,{" "}
-              <strong>Python</strong>, and <strong>Rust</strong>; and from
-              those, Rust is my favourite language to use. I absolutely adore
-              Unix. I use Vim as my IDE of choice. My{" "}
+              <strong>Java</strong>,<strong> C</strong>,{" "}
+              <strong>JavaScript</strong>, <strong>Python</strong>, and{" "}
+              <strong>Rust</strong>; and from those, Rust is my favourite
+              language to use. I absolutely adore Unix. I use Vim as my IDE of
+              choice. My{" "}
               <NextLink href="/blog" scroll={false}>
                 <Link>blog</Link>
               </NextLink>{" "}
@@ -120,15 +120,6 @@ const Page = () => {
               </Link>
             </Box>
 
-            <Box display="flex">
-              <p>
-                <FontAwesomeIcon icon={faInstagram} fixedWidth />
-                &ensp;{" "}
-              </p>{" "}
-              <Link href="https://instagram.com/pablolafontaine1">
-                @pablolafontaine1
-              </Link>
-            </Box>
             <Box display="flex">
               <p>
                 <FontAwesomeIcon icon={faLinkedin} fixedWidth />
