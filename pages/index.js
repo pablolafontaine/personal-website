@@ -145,7 +145,7 @@ const Page = () => {
             <Heading size="md"> Other</Heading>
             <Spacer mt={{ base: 2 }} />
             <p>
-              Outside of programming, I am a gamer, music producer, caffiene
+              Outside of programming, I am a gamer, music producer, caffeine 
               addict, 日本語を勉強している人, keyboard enthusiast, and virtual
               reality lover. I also am a huge cat person.
             </p>
