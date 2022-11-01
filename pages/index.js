@@ -138,7 +138,7 @@ const Page = () => {
             <Box display="flex">
               <p>
                 <FontAwesomeIcon icon={faEnvelope} fixedWidth />
-                &ensp;pablolafontaine1@gmail.com
+                &ensp;contact@pablolafontaine.com
               </p>
             </Box>
             <Spacer mt={{ base: 8 }} />
