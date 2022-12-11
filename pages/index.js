@@ -24,7 +24,7 @@ const Page = () => {
       <Head>
         <meta content="Pablo Lafontaine" property="og:title" />
         <meta
-          content="Hi! I am currently studying computer science in my second year at Toronto Metropolitan University (Ryerson). I love learning, experimenting, and taking on new, exciting, and challenging tasks."
+          content="Hi! I am currently studying computer science in my third year at Toronto Metropolitan University (Ryerson). I love learning, experimenting, and taking on new, exciting, and challenging tasks."
           property="og:description"
         />
         <meta content="https://pablolafontaine.com/" property="og:url" />
