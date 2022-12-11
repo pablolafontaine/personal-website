@@ -72,7 +72,7 @@ const Page = () => {
             <Heading size="md"> About Me </Heading>
             <Spacer mt={{ base: 2 }} />
             <p>
-              Hi! I am currently studying computer science in my second year at{" "}
+              Hi! I am currently studying computer science in my third year at{" "}
               <strong>Toronto Metropolitan University</strong> (Ryerson). I love
               learning, experimenting, and taking on new, exciting, and
               challenging tasks. For examples of my works, check out the{" "}
