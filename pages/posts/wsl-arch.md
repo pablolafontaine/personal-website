@@ -109,4 +109,3 @@ And, finally, we can set that user as the default user.
 Congratulations! You now have a fully working and set up Arch Linux install integrated with Windows. To open it, just simply type: `wsl` in your PowerShell. If Arch is not your only distro, you may need to set it as default for `wsl` to work. This can be done with `wsl --setdefault arch`.
 
 Enjoy! 😊
-

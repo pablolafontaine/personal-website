@@ -88,15 +88,15 @@ const Page = () => {
             <Spacer mt={{ base: 2 }} />
             <p>
               Languages I am most comfortable and familiar with are{" "}
-              <strong>Java</strong>,<strong> C</strong>,{" "}
+              <strong>Rust</strong>,<strong> C++</strong>,{" "}
               <strong>JavaScript</strong>, <strong>Python</strong>, and{" "}
-              <strong>Rust</strong>; and from those, Rust is my favourite
+              <strong>Java</strong>; and from those, Rust is my favourite
               language to use. I absolutely adore Unix. I use Vim as my IDE of
               choice. My{" "}
               <NextLink href="/blog" scroll={false}>
                 <Link>blog</Link>
               </NextLink>{" "}
-              is used to document my current interests in more depth! Thus,
+              is used to document my current interests in more depth. Thus,
               check it out if you are interested.
             </p>
 
@@ -145,9 +145,10 @@ const Page = () => {
             <Heading size="md"> Other</Heading>
             <Spacer mt={{ base: 2 }} />
             <p>
-              Outside of programming, I am a gamer, music producer, caffeine 
-              addict, 日本語を勉強している人, keyboard enthusiast, and virtual
-              reality lover. I also am a huge cat person.
+              I love cats! Though, ironically, I do not own a cat; I hope to own
+              a cat someday. Outside of tech, I am a huge gamer and adore
+              shooter games and, more specifically, Valorant. I also am actively
+              studying Japanese.
             </p>
           </Box>
         </Container>
