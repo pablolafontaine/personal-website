@@ -72,9 +72,9 @@ const Page = () => {
             <Heading size="md"> About Me </Heading>
             <Spacer mt={{ base: 2 }} />
             <p>
-              Hi! I am currently studying computer science in my third year at{" "}
-              <strong>Toronto Metropolitan University</strong> (Ryerson). I love
-              learning, experimenting, and taking on new, exciting, and
+              Hi! I am currently studying computer science at{" "}
+              <strong>Toronto Metropolitan University</strong> (class of 2024).
+              I love learning, experimenting, and taking on new, exciting, and
               challenging tasks. For examples of my works, check out the{" "}
               <NextLink href="/projects" scroll={false}>
                 <Link>projects</Link>
@@ -96,8 +96,8 @@ const Page = () => {
               <NextLink href="/blog" scroll={false}>
                 <Link>blog</Link>
               </NextLink>{" "}
-              is used to document my current interests in more depth. Thus,
-              check it out if you are interested.
+              is going to be used to document my current interests in more
+              depth. Thus, check it out if you are interested.
             </p>
 
             <Spacer mt={{ base: 8 }} />
@@ -146,9 +146,11 @@ const Page = () => {
             <Spacer mt={{ base: 2 }} />
             <p>
               I love cats! Though, ironically, I do not own a cat; I hope to own
-              a cat someday. Outside of tech, I am a huge gamer and adore
-              shooter games and, more specifically, Valorant. I also am actively
-              studying Japanese.
+              a cat someday. Outside of tech, I am a huge gamer and adore all
+              sorts of games. I also am actively studying Japanese. For now,
+              this site remains quite barebones; however, I am planning on
+              writing more blog posts on what I am actively working on or random
+              interests of mine in the future.
             </p>
           </Box>
         </Container>
